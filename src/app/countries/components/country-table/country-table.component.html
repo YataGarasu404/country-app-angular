@@ -1,0 +1,40 @@
+<!-- Tabla de Países --------------------------------------------------->
+
+<div *ngIf="countries.length=== 0; else table" 
+    class="alert alert-warning text-center">
+    No hay paises que mostrar
+</div>
+<!-- Estructura de la tabla -------------------------------------------->
+<ng-template #table> 
+    <table class="table table-hover table-dark table-striped text-center">
+        <thead> <!-- Cabecera de la tabla -->
+            <tr> <!-- Fila -->
+                <th>#</th> <!-- Título de celda -->
+                <th>FLAG</th> <!-- Título de celda -->
+                <th>NAME</th> <!-- Título de celda -->
+                <th>CAPITAL</th> <!-- Título de celda -->
+                <th>POPULATION</th> <!-- Título de celda -->
+                <th>LINK</th>  <!-- Título de celda -->
+            </tr>
+        </thead>
+        <tbody> <!-- Cuerpo de la tabla -->
+            <tr *ngFor="let country of countries;
+                let i= index"> <!-- Fila -->
+                <td> {{i+1}} </td> <!-- Celda -->
+                <td>
+                    <img [src]="country.flags.svg" 
+                    [alt]="country.name.common">
+                </td> <!-- Celda -->
+                <td> {{country.name.common}} </td> <!-- Celda -->
+                <td> {{country.capital}} </td> <!-- Celda -->
+                <!-- El pipe "number" convierte en número cuantificado -->
+                <td> {{country.population | number }} </td> <!-- Celda -->
+                <td>
+                    <a [routerLink]="[ '/countries/by', country.cca3]"
+                        class="link-danger link-underline-opacity-0">More info...</a>
+                </td> <!-- Celda -->
+            </tr>
+        </tbody>
+    </table>
+
+</ng-template>

@@ -1,0 +1,32 @@
+<h2>Por Región</h2>
+<hr>
+<!-- Style ---------------------------------------------------------------->
+<style> #region-selection { 
+    width: 100px; 
+    box-shadow: 0 0 5px orange;
+    } #region-selection:hover {
+        color: #FFF;
+    } </style>
+<!------------------------------------------------------------------------->
+
+<div class="row">
+    <div class="col text-center"> 
+        <button (click)="searchByRegion(region)"
+        *ngFor="let region of regions" id="region-selection"
+        [ngClass]="{ 'btn-warning text-white': selected=== region,
+                   'btn-outline-warning': selected!== region }"
+                class="btn mx-2 my-2 rounded-5">
+            {{ region }}
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <hr>
+        <shared-loading-loader *ngIf="Loading"></shared-loading-loader>
+        <country-table 
+            [countries]="countries">
+        </country-table>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.loader {
+    align-items: center;
+    background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    border-radius: 50px;
+    bottom: 30px;
+    color: #FFF;
+    display: flex;
+    right: 30px;
+    padding: 2px 20px;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0 0 10px purple;
+}
+
+.searching {
+    font-size: 25px;
+    letter-spacing: 10px;
+}

@@ -1,0 +1,49 @@
+<div class="container" id="sidebar">
+    <h2>
+        <span id="PAIS">PAIS</span>
+        <span id="ES">ES</span>
+    </h2>
+    <hr>
+    <ul class="list-group list-group-item-secondary">
+    <!------------------------- SAMPLES ----------------------
+    "routerLink" redirecciona a la ruta especificada ---------
+    "routerLinkActive" tiene varias configuraciones ----------
+    Por ejemplo, la de mostrar la ruta activa con "active" ---
+    "routerLinkActiveOptions" tiene varias configuraciones ---
+    Por ejemplo, "exact" hace estricta la sintaxis de la ruta
+
+        <li routerLink=""
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="list-group-item">
+            Home Page
+        </li>
+        <li routerLink="about"
+            routerLinkActive="active"
+            class="list-group-item">
+            About Page
+        </li>
+        <li routerLink="contact"
+            routerLinkActive="active"
+            class="list-group-item">
+            Contact Page
+        </li> 
+    ------------------------ SAMPLES - END ------------------>
+        <li routerLink="countries/by-capital"
+            routerLinkActive="active"
+            class="list-group-item">
+            Por capital
+        </li>
+        <li routerLink="countries/by-country"
+            routerLinkActive="active"
+            class="list-group-item">
+            Por país
+        </li>
+        <li routerLink="countries/by-region"
+            routerLinkActive="active"
+            class="list-group-item">
+            Por región
+        </li>
+
+    </ul>
+</div>
